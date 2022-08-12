@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Barlow Semi Condensed', sans-serif;
+}
+body{
+    font-size: 13px;
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    background-color: hsl(210, 46%, 95%);
+}
+
+/*Contenedor de cajas*/
+.section{
+    display: grid;
+    width: 70vw;
+    max-width: 70vw;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-areas: 
+    "container container container2 container5"
+    "container3 container4 container4 container5";
+    gap: 20px;
+}
+
+/*Cajas*/
+.container{
+    grid-area: container;
+    background-color: hsl(263, 55%, 52%);
+    background-image: url(/images/bg-pattern-quotation.svg);
+    background-repeat: no-repeat;
+    background-position-x: 80%;
+    height: auto;
+}
+.container2{
+    grid-area: container2;
+    background-color: hsl(217, 19%, 35%);
+}.container3{
+    grid-area: container3;
+    background-color: hsl(0, 0%, 100%);
+}.container4{
+    grid-area: container4;
+    background-color: hsl(219, 29%, 14%);
+}.container5{
+   grid-area: container5;
+   background-color: hsl(0, 0%, 100%);
+}
+
+/*Estructura general de cajas*/
+.caja{
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    justify-content: space-around;
+    gap: 20px;
+}
+
+/*Caja con información personal*/
+.img1{
+    border: 2px solid hsl(0, 0%, 100%, 50%);
+}
+.img4{
+    border: 2px solid hsl(263, 55%, 52%);
+}
+
+.info{
+    display: flex;
+}
+.info div{
+    display: flex;
+    flex-direction: column;
+    font-size: 11px;
+}
+
+.info img{
+    margin-right: 10px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+
+/*Estilos cajas 1, 2 y 4*/
+.name1{
+    font-size: 11px;
+    color: hsl(0, 0%, 100%, 90%);
+}
+.h--1{
+    color: hsl(0, 0%, 100%, 90%);
+}
+.p--1{
+    font-size: 11px;
+    color: hsl(0, 0%, 100%, 50%);
+}
+
+/*Estilos cajas 3 y 5*/
+.name2{
+    font-size: 11px;
+    color: hsl(219, 29%, 14% 40%);
+}
+.p--2{
+    color: rgba(25, 33, 46, 0.603);
+}
+.h--2{
+    color: rgba(25, 33, 46, 0.726);     
+}
+
+
+
+
+
+@media screen and (max-width: 1260px) {
+    .section{
+        margin-top: 80px;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        grid-template-areas: 
+        "container container container2"
+        "container3 container4 container4"
+        "container5 container5 container5";
+    }
+}
+@media screen and (max-width: 900px) {
+    .section{
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+        grid-template-areas: 
+        "container"
+        "container2"
+        "container3" 
+        "container4"
+        "container5";
+    }
+}
